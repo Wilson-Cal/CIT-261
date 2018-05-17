@@ -1,0 +1,27 @@
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flex-container>a {
+    text-decoration: none;
+    color: white;
+}
+
+.flex-container>a:hover {
+    opacity: 0.7;
+}
+
+.flex-container>a>div {
+    background-color: #0066b5;
+    width: 150px;
+    height: 150px;
+    margin: 25px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.flex-container>a>div>p {
+    padding-top: 50px;
+}
