@@ -4,10 +4,28 @@ body {
 }
 
 h1 {
-    color: orange;
+    color: #FFAD2f;
+    font-size: 50px;
+    text-align: center;
+}
+
+a {
+    color: #FF2F9A;
+}
+
+a:hover {
+    opacity: 0.5;
+}
+
+footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 .flex-container {
+    margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -23,7 +41,7 @@ h1 {
 }
 
 .flex-container>a>div {
-    background-color: #0066b5;
+    background-color: #3081EE;
     width: 150px;
     height: 150px;
     margin: 25px;
@@ -33,4 +51,10 @@ h1 {
 
 .flex-container>a>div>p {
     padding-top: 50px;
+}
+
+@media screen and (max-width: 1500px) {
+    footer {
+        position: relative;
+    }
 }
