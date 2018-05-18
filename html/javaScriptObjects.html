@@ -6,11 +6,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>JavaScript Objects</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css" />
+    <script src="../js/javaScriptObjects.js"></script>
 </head>
 
 <body>
+    <h1>JavaScript Objects</h1>
+    <hr>
+    <div class="row">
+        <div class="col-4">
+            <h2>Description</h2>
+            <hr>
+            <p>A JavaScript Object is a variable in JavaScript that holds other variables in a "property : value" format.</p>
+            <h2>Basic Syntax</h2>
+            <hr>
+            <p>var car = {make : 'Honda', model : 'CR-V', color : 'silver'}</p>
+        </div>
+        <div class="col-8">
+            <h2>Create a Custom Car</h2>
+            <hr>
+            <p>Make:
+                <select id="make" onchange="setModels(this)">
+                    <option value=""></option>
+                </select>
+            </p>
+            <p>Model:
+                <select id="model"></select>
+            </p>
+            <p>Year:
+                <select id="year">
+                    <option value=""></option>
+                </select>
+            </p>
+            <p>Color:
+                <select id="color">
+                    <option value=""></option>
+                </select>
+            </p>
+            <input type="button" value="Submit" id="submit" onclick="createCarJavaScriptObject()">
+            <h2>Output</h2>
+            <hr>
+            <div id="carObjectDiv"></div>
+        </div>
+    </div>
 
 </body>
 

@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: white;
     font-family: "Open Sans"
@@ -7,6 +11,16 @@ h1 {
     color: #FFAD2f;
     font-size: 50px;
     text-align: center;
+}
+
+h2 {
+    color: #0076B6;
+    font-size: 35px;
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
 }
 
 a {
@@ -21,6 +35,66 @@ footer {
     text-align: center;
     position: fixed;
     bottom: 0;
+    width: 100%;
+}
+
+.content {
+    margin-left: 10px;
+    width: 25%;
+}
+
+/* Responsive Design Code */
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
     width: 100%;
 }
 
@@ -51,6 +125,7 @@ footer {
 
 .flex-container>a>div>p {
     padding-top: 50px;
+    font-size: 25px;
 }
 
 @media screen and (max-width: 1500px) {
