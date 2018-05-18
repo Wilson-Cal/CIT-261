@@ -53,27 +53,31 @@ function setModels(make) {
 }
 
 function setYears() {
-    var yearSelect = document.querySelector('select[id="year"]');
-    var years = ['2012', '2013', '2014', '2015', '2016', '2017', '2018']
-    years.forEach(year => {
-        var newYear = document.createElement('option');
-        newYear.value = year;
-        newYear.innerHTML = year;
-        yearSelect.appendChild(newYear);
+    return new Promise((resolve, reject) => {
+        var yearSelect = document.querySelector('select[id="year"]');
+        var years = ['2012', '2013', '2014', '2015', '2016', '2017', '2018']
+        resolve(years.forEach(year => {
+            var newYear = document.createElement('option');
+            newYear.value = year;
+            newYear.innerHTML = year;
+            yearSelect.appendChild(newYear);
 
-    });
+        }));
+    })
 }
 
 function setColors() {
-    var colorSelect = document.querySelector('select[id="color"]');
-    var colors = ['Red', 'Blue', 'Green', 'Black', 'Silver', 'White']
-    colors.forEach(color => {
-        var newColor = document.createElement('option');
-        newColor.value = color;
-        newColor.innerHTML = color;
-        colorSelect.appendChild(newColor);
+    return new Promise((resolve, reject) => {
+        var colorSelect = document.querySelector('select[id="color"]');
+        var colors = ['Red', 'Blue', 'Green', 'Black', 'Silver', 'White']
+        resolve(colors.forEach(color => {
+            var newColor = document.createElement('option');
+            newColor.value = color;
+            newColor.innerHTML = color;
+            colorSelect.appendChild(newColor);
 
-    });
+        }));
+    })
 }
 
 function createCarJavaScriptObject() {
