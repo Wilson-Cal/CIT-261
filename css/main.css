@@ -22,7 +22,13 @@ h2 {
 h3 {
     color: black;
     font-size: 25px;
-    text-align: center;
+}
+
+h3:after {
+    content: ' ';
+    display: block;
+    width: 375px;
+    border: 1px solid black;
 }
 
 p {
@@ -47,6 +53,13 @@ footer {
 .content {
     margin-left: 10px;
     width: 25%;
+}
+
+textarea {
+    width: 50%;
+    height: 200px;
+    font-size: 18px;
+    resize: none;
 }
 
 /* Responsive Design Code */

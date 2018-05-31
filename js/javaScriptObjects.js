@@ -61,7 +61,6 @@ function setYears() {
             newYear.value = year;
             newYear.innerHTML = year;
             yearSelect.appendChild(newYear);
-
         }));
     })
 }
