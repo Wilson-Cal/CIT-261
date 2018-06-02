@@ -11,17 +11,22 @@ var domEvents = {
     keyup,
     mousedown,
     mouseover,
-    mouseout,
-    pagehide,
-    pageshow,
-    reset,
-    submit,
     touchstart,
-    touchcancel,
     touchmove,
     touchend,
     transitionend
 };
+
+window.addEventListener('pagehide', () => {
+    localStorage.setItem('Last Date Visited', Date());
+})
+
+window.addEventListener('pageshow', () => {
+    if (localStorage.getItem('Last Date Visited'))
+        document.getElementById('lastDateVisited').innerHTML = '<p>Date Last Visited: ' + localStorage.getItem('Last Date Visited') + '</p>';
+    else
+        document.getElementById('lastDateVisited').innerHTML = '<p>Date Last Visited: ' + Date() + '</p>';
+})
 
 window.addEventListener('load', () => {
     var eventSelect = document.querySelector('[id="events"]');
@@ -47,6 +52,10 @@ document.querySelector('[id="events"]').addEventListener('change', () => {
         document.querySelector('[id=basicSyntax').innerHTML = '<p><em>Select an Event to See its Syntax</em></p>';
     }
 });
+
+function loadFavColor() {
+    document.getElementById('favoritecolor').value = localStorage.getItem('favColor');
+}
 
 function animationstart() {
     var str = '<h3>Animation Start Example</h3>';
@@ -219,80 +228,137 @@ function click() {
 
 function focus() {
     var str = '<h3>Focus Example</h3>';
+    str += '<p>Enter Text: <input type="text" onfocus="this.style.background = `yellow`;"></p>';
+    str += '<p>When you click inside the text box, a function is called that turns the background yellow</p>';
     document.querySelector('[id=example]').innerHTML = str;
+    str = '<p>The focus event occurs when an element gets focus</p>';
+    document.querySelector('[id=description').innerHTML = str;
+    str = '<p>In-line HTML:<br>&lt;input type="text" onfocus="<em>Your code here</em>"&gt;</p>';
+    str += '<p>JS code:<br><em>element</em>.addEventListener("focus", () => {<em>Your code here</em>});</p>';
+    document.querySelector('[id=basicSyntax').innerHTML = str;
 }
 
 function keydown() {
     var str = '<h3>Key Down Example</h3>';
+    str += '<p>Enter Text: <input type="text" onkeydown="document.getElementById(`keydownexample`).value = this.value;"></p>';
+    str += '<p>Transfered Text: <input type="text" id="keydownexample"></p>'
+    str += '<p>When you press a key down inside the text box, a function is called that transfers the last typed letter to the other input box.</p>';
     document.querySelector('[id=example]').innerHTML = str;
+    str = '<p>The keydown event occurs when the user is pressing a key (on the keyboard)</p>';
+    document.querySelector('[id=description').innerHTML = str;
+    str = '<p>In-line HTML:<br>&lt;input type="text" onkeydown="<em>Your code here</em>"&gt;</p>';
+    str += '<p>JS code:<br><em>element</em>.addEventListener("keydown", () => {<em>Your code here</em>});</p>';
+    document.querySelector('[id=basicSyntax').innerHTML = str;
 }
 
 function keypress() {
     var str = '<h3>Key Press Example</h3>';
+    str += '<p>Enter Text: <input type="text" onkeypress="document.getElementById(`keypressexample`).value = this.value;"></p>';
+    str += '<p>Transfered Text: <input type="text" id="keypressexample"></p>'
+    str += '<p>When you press a key down inside the text box, a function is called that transfers the last typed letter to the other input box.</p>';
     document.querySelector('[id=example]').innerHTML = str;
+    str = '<p>The keypress event occurs when the user presses a key (on the keyboard)</p>';
+    document.querySelector('[id=description').innerHTML = str;
+    str = '<p>In-line HTML:<br>&lt;input type="text" onkeypress="<em>Your code here</em>"&gt;</p>';
+    str += '<p>JS code:<br><em>element</em>.addEventListener("keypress", () => {<em>Your code here</em>});</p>';
+    document.querySelector('[id=basicSyntax').innerHTML = str;
 }
 
 function keyup() {
     var str = '<h3>Key Up Example</h3>';
+    str += '<p>Enter Password: <input type="password" onkeyup="document.getElementById(`keypressexample`).value = this.value;"></p>';
+    str += '<p>Verify Password: <input type="password" id="keypressexample"></p>'
+    str += '<p>When you press a key down and let it go up inside the text box, a function is called that transfers the password automatically.</p>';
     document.querySelector('[id=example]').innerHTML = str;
+    str = '<p>The keyup event occurs when the user releases a key (on the keyboard)</p>';
+    document.querySelector('[id=description').innerHTML = str;
+    str = '<p>In-line HTML:<br>&lt;input type="text" onkeyup="<em>Your code here</em>"&gt;</p>';
+    str += '<p>JS code:<br><em>element</em>.addEventListener("keyup", () => {<em>Your code here</em>});</p>';
+    document.querySelector('[id=basicSyntax').innerHTML = str;
 }
 
 function mousedown() {
     var str = '<h3>Mouse Down Example</h3>';
+    str += '<div id="mousedowndiv" style="background-color: orange; color: white; cursor: pointer; width:100px; height:100px;" onmousedown="this.style.backgroundColor = `blue`; this.innerHTML = `I\'m Blue!`">Click me to change my color to blue</div>';
     document.querySelector('[id=example]').innerHTML = str;
+    str = '<p>The mousedown event occurs when a user presses a mouse button over an element</p>';
+    document.querySelector('[id=description').innerHTML = str;
+    str = '<p>In-line HTML:<br>&lt;input type="text" onmousedown="<em>Your code here</em>"&gt;</p>';
+    str += '<p>JS code:<br><em>element</em>.addEventListener("mousedown", () => {<em>Your code here</em>});</p>';
+    document.querySelector('[id=basicSyntax').innerHTML = str;
 }
 
 function mouseover() {
     var str = '<h3>Mouse Over Example</h3>';
+    str += '<div id="mousedowndiv" style="background-color: orange; color: white; width:100px; height:100px;" onmouseover="this.style.backgroundColor = `blue`; this.innerHTML = `I\'m Blue!`">Hover over me to change my color to blue</div>';
     document.querySelector('[id=example]').innerHTML = str;
-}
-
-function mouseout() {
-    var str = '<h3>Mouse Out Example</h3>';
-    document.querySelector('[id=example]').innerHTML = str;
-}
-
-function pagehide() {
-    var str = '<h3>Page Hide Example</h3>';
-    document.querySelector('[id=example]').innerHTML = str;
-}
-
-function pageshow() {
-    var str = '<h3>Page Show Example</h3>';
-    document.querySelector('[id=example]').innerHTML = str;
-}
-
-function reset() {
-    var str = '<h3>Reset Example</h3>';
-    document.querySelector('[id=example]').innerHTML = str;
-}
-
-function submit() {
-    var str = '<h3>Submit Example</h3>';
-    document.querySelector('[id=example]').innerHTML = str;
+    str = '<p>The mouseover event occurs when the mouse pointer is moved onto an element, or onto one of its children</p>';
+    document.querySelector('[id=description').innerHTML = str;
+    str = '<p>In-line HTML:<br>&lt;input type="text" onmouseover="<em>Your code here</em>"&gt;</p>';
+    str += '<p>JS code:<br><em>element</em>.addEventListener("mouseover", () => {<em>Your code here</em>});</p>';
+    document.querySelector('[id=basicSyntax').innerHTML = str;
 }
 
 function touchstart() {
     var str = '<h3>Touch Start Example</h3>';
+    str += '<p ontouchstart="this.style.color = `blue`; this.innerHTML = `Touched!`">Touch me to change my color and text!</p>';
+    str += '<p>This function only works on touch-friendly devices!</p>';
     document.querySelector('[id=example]').innerHTML = str;
-}
-
-function touchcancel() {
-    var str = '<h3>Touch Cancel Example</h3>';
-    document.querySelector('[id=example]').innerHTML = str;
+    str = '<p>The touchstart event occurs when the user touches an element.</p>';
+    document.querySelector('[id=description').innerHTML = str;
+    str = '<p>In-line HTML:<br>&lt;input type="text" ontouchstart="<em>Your code here</em>"&gt;</p>';
+    str += '<p>JS code:<br><em>element</em>.addEventListener("touchstart", () => {<em>Your code here</em>});</p>';
+    document.querySelector('[id=basicSyntax').innerHTML = str;
 }
 
 function touchmove() {
     var str = '<h3>Touch Move Example</h3>';
+    str += '<p ontouchmove="var x = event.touches[0].clientX;var y = event.touches[0].clientY;document.getElementById(`coordinates`).innerHTML = `Coordinates: ` + x + `, ` + y;">Touch me and move your finger around the screen to see the coordinates of where you are touching!</p>';
+    str += '<p>This function only works on touch-friendly devices!</p>';
+    str += '<p id="coordinates"></p>'
     document.querySelector('[id=example]').innerHTML = str;
+    str = '<p>The touchmove event occurs when the user moves the finger across the screen</p>';
+    document.querySelector('[id=description').innerHTML = str;
+    str = '<p>In-line HTML:<br>&lt;input type="text" ontouchmove="<em>Your code here</em>"&gt;</p>';
+    str += '<p>JS code:<br><em>element</em>.addEventListener("touchmove", () => {<em>Your code here</em>});</p>';
+    document.querySelector('[id=basicSyntax').innerHTML = str;
 }
 
 function touchend() {
     var str = '<h3>Touch End Example</h3>';
+    str += '<p ontouchend="this.innerHTML = `Touch Ended!`">Touch me then stop touching the screen to change my text!</p>';
+    str += '<p>This function only works on touch-friendly devices!</p>';
     document.querySelector('[id=example]').innerHTML = str;
+    str = '<p>The touchend event occurs when the user removes the finger from an element</p>';
+    document.querySelector('[id=description').innerHTML = str;
+    str = '<p>In-line HTML:<br>&lt;input type="text" ontouchend="<em>Your code here</em>"&gt;</p>';
+    str += '<p>JS code:<br><em>element</em>.addEventListener("touchend", () => {<em>Your code here</em>});</p>';
+    document.querySelector('[id=basicSyntax').innerHTML = str;
 }
 
 function transitionend() {
     var str = '<h3>Transition End Example</h3>';
+    str += `<style> 
+    #transition {
+        width: 100px;
+        height: 100px;
+        background: red;
+        -webkit-transition: height 2s, width 2s;
+    }
+    #transition:hover {
+        width: 375px;
+        height: 375px;
+    }
+    </style>`;
+    str += '<div id="transition"></div>';
     document.querySelector('[id=example]').innerHTML = str;
+    str = '<p>The transitionend event occurs when a CSS transition has completed</p>';
+    document.querySelector('[id=description').innerHTML = str;
+    str = '<p>In-line HTML: N/A</p>';
+    str += '<p>JS code:<br><em>element</em>.addEventListener("transitionend", () => {<em>Your code here</em>});</p>';
+    document.querySelector('[id=basicSyntax').innerHTML = str;
+    document.getElementById("transition").addEventListener("webkitTransitionEnd", () => {
+        document.getElementById("transition").innerHTML = "Transition Ended!";
+        document.getElementById("transition").style.backgroundColor = "grey";
+    });
 }
