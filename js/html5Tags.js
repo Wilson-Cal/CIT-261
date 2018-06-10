@@ -77,7 +77,7 @@ function saveCanvas() {
     var key = document.getElementById('canvasName').value;
     if (key) {
         localStorage.setItem(key.toLowerCase(), c.toDataURL());
-        showToast(`'${key}' Saved`);
+        showToast(`Drawing Saved`);
     } else {
         alert('Please name your drawing before saving');
     }
@@ -93,7 +93,7 @@ function loadCanvas() {
             img.onload = function () {
                 clearCanvas();
                 context.drawImage(img, 0, 0);
-                showToast(`'${key}' Loaded`);
+                showToast(`Drawing Loaded`);
             };
         } else {
             alert('Please enter a valid save name');

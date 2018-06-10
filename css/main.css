@@ -94,20 +94,26 @@ button {
     cursor: pointer;
 }
 
+.instructions {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* Toast Code */
 
 #toast {
     visibility: hidden;
-    max-width: 250px;
+    max-width: 26%;
     margin-left: auto;
-    margin-right: -175px;
+    margin-right: 2px;
     background-color: #0076B6;
     color: #fff;
     text-align: center;
     border-radius: 2px;
     padding: 16px;
     z-index: 1;
-    margin-top: 10px;
+    margin-top: 204px;
     font-size: 17px;
 }
 
