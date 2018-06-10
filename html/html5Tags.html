@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css" />
+
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-4">
+            <h2>HTML5 Video Tag</h2>
+            <video src="../TheChosenOne.mp4" type="video/mp4" preload="auto" controls>Your browser does not support the video element.</video>
+            <h2>HTML5 Audio Tag</h2>
+            <audio controls>
+                <source src="../Daughter - Medicine.mp3" type="audio/mpeg">Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="col-8">
+            <h2>HTML5 Canvas Tag</h2>
+            <div class="canvasContainer">
+                <div class="canvasMenu">
+                    <button onclick="clearCanvas()">Clear</button>
+                    <button style="float: right;" onclick="loadCanvas()">Load</button>
+                    <button style="float: right;" onclick="saveCanvas()">Save</button>
+                    <input style="float: right; height: 40px;" type="text" id="canvasName" placeholder="Drawing Name">
+                    <select id="canvasColor" style="float: right; width: 98.5px; height: 40px;">
+                        <option>Black</option>
+                        <option>Eraser</option>
+                        <option>Red</option>
+                        <option>Orange</option>
+                        <option>Yellow</option>
+                        <option>Green</option>
+                        <option>Blue</option>
+                        <option>Purple</option>
+                    </select>
+                    <select id="canvasCursor" style="float: right; width: 98.5px; height: 40px;">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>5</option>
+                        <option>10</option>
+                        <option>12</option>
+                        <option>15</option>
+                        <option>20</option>
+                        <option>50</option>
+                    </select>
+                </div>
+                <canvas id="myCanvas">Your browser does not support the HTML5 canvas tag.</canvas>
+                <h3>Instructions</h3>
+                <ul>
+                    <li>Click and drag your mouse inside the canvas to draw</li>
+                    <li>To clear the canvas, click the 'Clear' button in the menu</li>
+                    <li>You may select different sizes from the menu's first dropdown</li>
+                    <li>You may select different colors or an eraser from the menu's second dropdown</li>
+                    <li>You may save your drawings by giving it a name and clicking the menu's 'Save' button</li>
+                    <li>You may load your saved drawings by entering the drawing's name and clicking the menu's 'Load' button</li>
+                </ul>
+                <div id="toast"></div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/html5Tags.js"></script>
+</body>
+
+</html>
