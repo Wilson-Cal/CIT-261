@@ -88,6 +88,16 @@ canvas {
     background-color: grey;
 }
 
+.box {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    color: white;
+    text-align: center;
+    margin: 10px;
+    cursor: pointer;
+}
+
 button {
     height: 40px;
     width: 13%;
