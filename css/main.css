@@ -110,6 +110,99 @@ button {
     margin-right: auto;
 }
 
+/* CSS Transition Code */
+
+.transistion {
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    background-color: blue;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    margin: 10px;
+    -webkit-transition: width 2s, height 2s, background-color 2s, font-size 2s, border-radius 2s;
+    transition: width 2s, height 2s, background-color 2s, font-size 2s, border-radius 2s;
+}
+
+.transistion:hover {
+    height: 300px;
+    width: 600px;
+    background-color: red;
+    font-size: 75px;
+    border-radius: 75px;
+}
+
+/* CSS Transform Code */
+
+.transform {
+    height: 100px;
+    width: 200px;
+    background-color: purple;
+    color: white;
+    text-align: center;
+    margin: 10px;
+    -webkit-transition: all 4s;
+    transition: all 4s;
+}
+
+.transform:hover {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+/* CSS Animation Code */
+
+.preanimation {
+    height: 100px;
+    width: 200px;
+    background-color: orange;
+    color: white;
+    text-align: center;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.animation {
+    height: 100px;
+    width: 200px;
+    background-color: orange;
+    color: white;
+    text-align: center;
+    margin: 10px;
+    cursor: pointer;
+    -webkit-animation-name: discoParty;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-count: infinite;
+    animation-name: discoParty;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes discoParty {
+    0% {
+        background-color: orange;
+    }
+    16% {
+        background-color: yellow;
+    }
+    32% {
+        background-color: green;
+    }
+    48% {
+        background-color: blue;
+    }
+    64% {
+        background-color: purple;
+    }
+    80% {
+        background-color: red;
+    }
+    100% {
+        background-color: orange;
+    }
+}
+
 /* Toast Code */
 
 #toast {
