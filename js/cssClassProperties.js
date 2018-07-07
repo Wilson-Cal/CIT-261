@@ -13,6 +13,17 @@ document.querySelectorAll('[class=box]').forEach(box => {
     });
 });
 
+async function hello() {
+    let course = await canvas.getCourse(11642);
+    console.log(course);
+}
+
+function hello() {
+    return new Promise((resolve, reject) => {
+        canvas.getCourse(1164, jkhdfgjd)
+    })
+}
+
 
 /* Code for Designing, Defining, and Triggering CSS3 Transitions without Custom Libraries */
 
